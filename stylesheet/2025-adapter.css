@@ -1,0 +1,43 @@
+/* Roblox 2025 compatibility adapter for the injected 2020 stylesheet.
+   Load this AFTER your large CSS. Keep your original file untouched. */
+
+/* 1) Fonts everywhere (not for icon glyphs) */
+html,body,button,input,select,textarea,div,span,p,h1,h2,h3,h4,h5,h6,li,a,small,strong,em{
+  font-family:"Gotham SSm","Gotham","Segoe UI",Helvetica,Arial,sans-serif!important;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* 2) Restore container/grid spacing the legacy file zeroed out */
+.container,.container-fluid,[class*="container"]{padding-left:15px!important;padding-right:15px!important}
+.row{margin-left:-15px!important;margin-right:-15px!important}
+[class^="col-"],[class*=" col-"]{padding-left:15px!important;padding-right:15px!important}
+
+/* 3) Header/nav look closer to 2020 */
+header,[class*="Header"],header[role="banner"],nav[role="navigation"]{
+  background:#f5f5f5!important;border-bottom:1px solid #ddd!important;min-height:50px
+}
+
+/* 4) Left sidebar look */
+aside,[class*="Sidebar"],nav[aria-label*="left"],[data-testid*="left-nav"]{
+  background:#e3e3e3!important;border-right:1px solid #cfcfcf!important
+}
+
+/* 5) Buttons back to 2020 vibe */
+[class*="btn-growth"],.btn-primary,button[class*="Primary"],[role="button"].btn-primary{
+  background:#1446FF!important;border-color:#1446FF!important;color:#fff!important
+}
+[class*="btn-growth"]:hover,.btn-primary:hover,button[class*="Primary"]:hover{filter:brightness(.95)}
+
+/* 6) Cards / tiles */
+[class*="card"],[class*="Tile"],[class*="tile"],[class*="panel"],.panel,.card{
+  background:#fff!important;border:1px solid #ddd!important;box-shadow:0 1px 1px rgba(0,0,0,.05)!important;border-radius:4px!important
+}
+
+/* 7) Inputs */
+input[type=text],input[type=search],input[type=email],input[type=password],textarea,select{
+  border:1px solid #ccc!important;background:#fff!important;border-radius:4px!important;padding:6px 10px!important
+}
+
+/* 8) Image behavior similar to 2020 cards/grids */
+img{max-width:100%;height:auto}
